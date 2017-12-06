@@ -4,18 +4,21 @@ if (process.env.NODE_ENV !== 'production') {
 
 const express = require('express')
 const bodyParser = require('body-parser')
+const { initialize } = require('./middleware/auth')
 const morgan = require('morgan');
 
 const app = express()
 
 // Plugins
 app.use(bodyParser.json()) // Allows me to have JSON uploads (POST/PUT)
+app.use(initialize) // Use Passport to handle authentication
 app.use(morgan('dev')); // Log server requests
 
 // Routes
 
 app.use([
-    require('./routes/products')
+    require('./routes/products'),
+    require('./routes/auth')
 ])
 
 // JSON error handling
