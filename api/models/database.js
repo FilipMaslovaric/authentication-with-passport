@@ -11,4 +11,4 @@ mongoose.connect('mongodb://localhost/myshop', { useMongoClient: true})
     console.log('Error connecting to MongoDB database', error)
 })
 
-module.exports = mongooses
+module.exports = mongoose
