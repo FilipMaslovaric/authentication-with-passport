@@ -12,6 +12,12 @@ const app = express()
 app.use(bodyParser.json()) // Allows me to have JSON uploads (POST/PUT)
 app.use(morgan('dev')); // Log server requests
 
+// Routes
+
+app.use([
+    require('./routes/products')
+])
+
 // JSON error handling
 app.use((error, req, res, next) => {
     res.send({error: error.message})
@@ -23,8 +29,6 @@ app.use((req,res,next) => {
         error: `No route found for ${req.method}, ${req.url}`
     })
 })
-
-// Routes
 
 app.listen(7000, (error) => {
     if (error) {
