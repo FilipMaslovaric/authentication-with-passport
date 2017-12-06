@@ -11,6 +11,7 @@
   },
   "scripts": {
     "dev": "nodemon server.js",
-    "seed": "node models/seed.js"
+    "seed": "node models/seed.js",
+    "drop": "node models/drop.js"
   }
 }
