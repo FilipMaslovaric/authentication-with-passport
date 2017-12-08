@@ -1,34 +1,23 @@
 import React, { Component } from 'react';
-import { Level, Control, Title, Button } from 'reactbulma';
-import axios from 'axios';
-import LoginForm from './components/LoginForm';
+import logo from './logo.svg';
+import './App.css';
 
 class App extends Component {
 
-  state = {
-    firstName: '',
-    lastName: '',
-    email: '',
-    password: '',
-    loggedIn: false
+  state= {
+    token: null
   }
-
+  
   render() {
-
-    let loggedInState = null
-    if (!this.state.loggedIn) {
-      loggedInState = <div>
-                        <LoginForm />
-                        <Button> Register </Button>
-                      </div>
-    } else {
-      loggedInState = <div>
-                        <p>All Products</p>
-                      </div>
-    }
     return (
       <div className="App">
-      {loggedInState}
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <h1 className="App-title">Welcome to React</h1>
+        </header>
+        <p className="App-intro">
+          To get started, edit <code>src/App.js</code> and save to reload.
+        </p>
       </div>
     );
   }
