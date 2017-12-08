@@ -26,3 +26,22 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 200px;
+}
+
+.box {
+  width: 35%;
+}
+
+.button {
+  margin: 0 10px;
+}
+
+.control {
+  margin: 10px 0;
+}
